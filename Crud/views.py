@@ -1,5 +1,6 @@
 from django.shortcuts import render
+from .models import Curso
 
-# Create your views here.
 def home(request):
-    return  render(request,'gestionCursos.html')
+    cursos = Curso.objects.all()
+    return  render(request,'gestionCursos.html', {"cursos": cursos})
